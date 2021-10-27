@@ -26,7 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="446bf76f-679b-44d3-99ad-bb405089f9f5">
-        <schema name="main" object-types="table, view" />
+        <schema name="main" object-types="table, view, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
@@ -42,6 +42,7 @@
     <connection id="446bf76f-679b-44d3-99ad-bb405089f9f5" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="446bf76f-679b-44d3-99ad-bb405089f9f5" dataset="main.authapp_shopuser" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="446bf76f-679b-44d3-99ad-bb405089f9f5" dataset="main.basketapp_basket" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">

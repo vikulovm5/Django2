@@ -1,4 +1,4 @@
-import objects as objects
+# import objects as objects
 from django.db import models
 from django.conf import settings
 from mainapp.models import Product
