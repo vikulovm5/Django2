@@ -1,3 +1,5 @@
+from django.views.decorators.cache import cache_page
+
 import mainapp.views as mainapp
 from django.conf import settings
 from django.conf.urls import include
@@ -6,6 +8,7 @@ from django.urls import re_path
 from django.urls import path
 
 urlpatterns = [
+    re_path(r'^category/(?P<pk>\d+)/$', cache_page(3600)(mainapp.products)),
     re_path(r'^$', mainapp.main, name='main'),
     re_path(r'^products/', include('mainapp.urls', namespace='products')),
     re_path(r'^contact/', mainapp.contact, name='contact'),
@@ -17,4 +20,7 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns += [re_path(r'^__debug__/', include(debug_toolbar.urls))]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
